@@ -1,0 +1,1 @@
+a:8:{i:0;s:8:"opern_id";i:1;s:4:"name";i:2;s:5:"count";i:3;s:5:"thumb";i:4;s:6:"status";i:5;s:11:"create_time";s:3:"_pk";s:8:"opern_id";s:5:"_type";a:6:{s:8:"opern_id";s:7:"int(11)";s:4:"name";s:11:"varchar(50)";s:5:"count";s:7:"int(11)";s:5:"thumb";s:12:"varchar(100)";s:6:"status";s:10:"tinyint(1)";s:11:"create_time";s:16:"int(10) unsigned";}}

@@ -1,0 +1,34 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">添加曲谱 -></div>
+		</div>
+		<div  class="news_addform">
+			<form id="form">
+				<input type="text" name="name" placeholder="name" class="form_text" value="{$opernbyid.name}"><br>
+				<input id="file_upload"  type="file" multiple="true" >
+		        <img <if condition="$opernbyid['thumb'] eq ''">style="display:none;"</if> id="upload_org_code_img" src="{$opernbyid.thumb}" width="150" height="150">
+		        <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="{$opernbyid.thumb}"><br>
+		        <label>状态:</label><span>
+				<input  class="news_form_radio" type="radio" name="status" value="1" <if condition="$opernbyid['status'] eq 1">checked</if>>开
+				<input  class="news_form_radio" type="radio" name="status" value="0" <if condition="$opernbyid['status'] eq 0">checked</if>>关
+				</span><br>
+				<input type="hidden" name="opern_id" value="{$opernbyid.opern_id}">
+				<input class="news_form_button" type="button" id="submit" value="submit">
+			</form>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js?v=318"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/party/jquery.uploadify.js"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/image.js"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'url':'admin.php?c=opern&a=add',
+		'jump_url':'admin.php?c=opern',
+		'ajax_upload_image_url':'admin.php?c=image&a=ajaxuploadimage',
+		'ajax_upload_swf':'/WebPiano/Public/js/party/uploadify.swf'
+	}
+</script>
+</body>
+</html>

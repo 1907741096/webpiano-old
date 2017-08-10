@@ -1,0 +1,38 @@
+<div class="background"></div>
+<header>
+	<div class="top">
+		<a class="logo" href="/WebPiano">WebPiano</a>
+		<a href="/WebPiano/index.php?c=news" class="top-left">论坛</a>
+		<a href="/WebPiano/index.php?c=opern" class="top-left">曲谱站</a>
+		<a href="/WebPiano/index.php?c=info" class="top-left">个人中心</a>
+		<div class="top-login">
+			<img>
+			<if condition="$isuser eq 1">
+				<a href="index.php?c=login&a=loginout">LoginOut</a>
+			<else />
+				<a onclick="login()">Login</a>
+				<!--/ <a onclick="reg()">Register</a>-->
+			</if>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function login(){
+			layer.open({
+				type: 2,
+				area: ['400px', '620px'],
+				fixed: false, //不固定
+				maxmin: true,
+				content: '/WebPiano/index.php?c=login'
+			});
+		}
+		function reg(){
+			layer.open({
+				type: 2,
+				area: ['400px', '620px'],
+				fixed: false, //不固定
+				maxmin: true,
+				content: '/WebPiano/index.php?c=login&a=reg'
+			});
+		}
+	</script>
+</header>

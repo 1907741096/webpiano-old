@@ -1,0 +1,38 @@
+<include file="Index/header"/>
+<body>
+	<div class="news_content">
+		<div class="news_content_top">
+			<div class="news_content_top_title">最新更新</div>
+			<div class="news_content_top_select">
+				<form action="index.php" method="get">
+					<input type="hidden" name="c" value="news">
+					<input type="hidden" name="a" value="main">
+					<div class="search">
+						<input type="text" name="title" id="select" placeholder="帖子搜索" value="{$title}">
+						<button type="submit" id="wp-select"><img src="/WebPiano/Public/image/icon/search.png" width="20px"></button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<volist name="news" id="new">
+			<div class="news_content_bottom">
+				<div class="news_content_title">
+					<if condition="$new['fine'] eq 1"><span id="fine">精</span></if>
+					<a href="index.php?c=news&a=info&id={$new.news_id}" target="_blank">{$new.title}</a>
+					<div class="time"><img src="/WebPiano/Public/image/icon/clock.png" height="18px"><div>{$new.create_time|date="m-d H:i",###}</div></div>
+				</div>
+				<div class="news_content_content">
+					<div class="news_content_img">
+						<img src="{$new.thumb}">
+					</div>
+					<div class="news_content_right">
+						<div class="news_content_right_content">{$new.content|getcontent}</div>
+						<div class="news_content_info"><img src="/WebPiano/Public/image/icon/user.png" height="16px">{$new.author}</div>
+						<div class="news_content_comment"><img src="/WebPiano/Public/image/icon/comments.png" height="16px">{$new.comment}</div>
+						</div>
+					</div>
+				</div>
+		</volist>
+		<div class="green-black">{$pageRes}</div>
+	</div>
+</body>

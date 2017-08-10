@@ -1,0 +1,19 @@
+<include file="Index/header"/>
+<body>
+	<include file="Index/top"/>
+	<div class="info">
+		<if condition="$user!=''">
+			<div class="info_face">
+				<img src="{$user.face}">
+				<div>{$user.name}</div>
+			</div>
+			<div class="info_main">
+				<iframe src="index.php?c=info&a=main" frameborder="0" name="mainFrame" width="100%" height="800"></iframe>
+			</div>
+		<else />
+			<div class="please_login">please login</div>
+		</if>
+	</div>
+<div class="info_bottom"></div>
+</body>
+</html>

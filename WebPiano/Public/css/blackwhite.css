@@ -1,0 +1,108 @@
+.background{
+	background: url('/WebPiano/Public/image/background.jpg') no-repeat;
+	background-size:100% 100%;
+}
+header{
+	background: #333;
+}
+.top{
+	background: #333;
+	color: #fff;
+}
+.top-left:hover{
+	background: #222;
+}
+.piano{
+	background: #222;
+}
+.whitekey{
+	background: #fff;
+}
+.blackkey{
+	background: #111;
+	border: 1px solid #111;
+	border-top: none;
+}
+.keys{
+	background: #eee;
+}
+.key2{
+	border:1px solid #999;
+	color: #eee;
+	background: #666;
+}
+.key3{
+	border:1px solid #bbb;
+	background: #fff;
+	color: #333;
+}
+.key4{
+	border:1px solid #bbb;
+	background: #fff;
+	color: #333;
+}
+#style{
+	color: #fff;
+	background: #222;
+}
+#changestyle li{
+	color:#fff;
+	background: #333;
+}
+#changestyle li:hover{
+	background: #222;
+}
+.loginback{
+	background: url('/WebPiano/Public/image/loginback9.jpg') no-repeat;
+	background-size:100% 100%;
+	overflow-y: hidden;
+}
+.loginform .username{
+	border:1px solid #999;
+}
+.loginform .password{
+	border:1px solid #999;
+}
+.loginform .submit{
+	border:1px solid #111;
+	background: #111;
+}
+.loginform .submit:hover{
+	background: #000;
+}
+.regform .username{
+	border:1px solid #999;
+}
+.regform .password{
+	border:1px solid #999;
+}
+.regform .submit{
+	border:1px solid #111;
+	background: #111;
+}
+.regform .submit:hover{
+	background: #000;
+}
+.news_left{
+	background:rgba(255,255,255,0.5);
+}
+.stick_title{
+	color: 	#1E90FF;
+}
+.stick_title span{
+	color: #FFF;
+	background: #1E90FF;
+}
+.stick_content{
+	color: #666;
+}
+.news_bottom{
+	background: #333;
+}
+.news_form_button{
+	border: 1px solid #333;
+	background: #333;
+}
+.info_bottom{
+	background: #333;
+}

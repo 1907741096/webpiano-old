@@ -1,0 +1,31 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">添加用户 -></div>
+		</div>
+		<div  class="addform">
+			<form id="form">
+				<input type="text" name="username" placeholder="username" class="form_text" value="{$userbyid.username}"><br>
+				<input type="password" name="password" placeholder="password" class="form_text"><br>
+				<input type="password" name="password2" placeholder="confirm password" class="form_text"><br>
+				<input type="text" name="name" placeholder="name" class="form_text" value="{$userbyid.name}"><br>
+				<input type="text" name="email" placeholder="email" class="form_text" value="{$userbyid.email}"><br>
+				<span>
+					<input  class="form_radio" type="radio" name="status" value="1" <if condition="$userbyid['status'] eq 1">checked</if>>开启
+					<input  class="form_radio" type="radio" name="status" value="0" <if condition="$userbyid['status'] eq 0">checked</if>>关闭
+				</span><br>
+				<input type="hidden" name="user_id" value="{$userbyid.user_id}">
+				<input class="form_button" type="button" id="submit" value="submit">
+			</form>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js?v=318"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'url':'admin.php?c=user&a=add',
+		'jump_url':'admin.php?c=user'
+	}
+</script>
+</body>
+</html>

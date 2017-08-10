@@ -1,0 +1,57 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">回复管理 -></div>
+			<div class="select">
+				<form action="admin.php" method="get">
+					<input type="hidden" name="c" value="reply">
+					<div class="search">
+						<input type="text" name="content" id="select" placeholder="回复内容搜索" value="{$content}">
+						<button type="submit" id="wp-select"><img src="/WebPiano/Public/image/icon/search.png" width="20px"></button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>回复人</th>
+						<th>回复评论</th>
+						<th>回复内容</th>
+						<th>状态</th>
+						<th>回复时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="replys" id="reply">
+						<tr>
+							<th>{$reply.reply_id}</th>
+							<th>{$reply.user_id}</th>
+							<th>{$reply.comment_id}</th>
+							<th>{$reply.content}</th>
+							<th><span id="status" attr-id="{$reply.reply_id}" attr-status="{$reply.status}">{$reply.status|getstatus}</span></th>
+							<th>{$reply.create_time|date="Y-m-d H:i",###}</th>
+							<th>
+								<img src="/WebPiano/Public/image/icon/look.png" width="20px" id="look" attr-id="{$reply.reply_id}" title="查看">
+								<img src="/WebPiano/Public/image/icon/delete.png" width="20px" id="delete" attr-id="{$reply.reply_id}" title="删除">
+							</th>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+			<div class="green-black">{$pageRes}</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js?v=317"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'status_url':'admin.php?c=reply&a=changestatus',
+		'delete_url':'admin.php?c=reply&a=delete'
+	}
+</script>
+</body>
+</html>

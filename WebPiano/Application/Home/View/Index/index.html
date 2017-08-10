@@ -1,0 +1,16 @@
+<include file="header"/>
+<body>
+	<include file="top"/>
+	<section>
+		<include file="key"/>
+		<include file="piano"/>
+	</section>
+	<include file="opern"/>
+	<div id="changestyle">
+		<div id="style">style</div>
+		<volist name="styles" id="style">
+			<li id="color{$style['style_id']}">{$style['name']}</li>
+		</volist>
+	</div>
+	<script src="/WebPiano/Public/js/piano.js"></script>
+</body>

@@ -1,0 +1,58 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">用户管理 -></div>
+			<div class="select">
+				<form action="admin.php" method="get">
+					<input type="hidden" name="c" value="user">
+					<div class="search">
+						<input type="text" name="username" id="select" placeholder="账号搜索" value="{$username}">
+						<button type="submit" id="wp-select"><img src="/WebPiano/Public/image/icon/search.png" width="20px"></button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>账号</th>
+						<th>昵称</th>
+						<th>邮箱</th>
+						<th>状态</th>
+						<th>注册时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="users" id="user">
+						<tr>
+							<th>{$user.user_id}</th>
+							<th>{$user.username}</th>
+							<th>{$user.name}</th>
+							<th>{$user.email}</th>
+							<th><span id="status" attr-id="{$user.user_id}" attr-status="{$user.status}">{$user.status|getstatus}</span></th>
+							<th>{$user.create_time|date="Y-m-d H:i",###}</th>
+							<th>
+								<img src="/WebPiano/Public/image/icon/edit.png" width="20px" id="edit" attr-id="{$user.user_id}">
+								<img src="/WebPiano/Public/image/icon/delete.png" width="20px" id="delete" attr-id="{$user.user_id}">
+							</th>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+			<div class="green-black">{$pageRes}</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'add_url':'admin.php?c=user&a=add',
+		'status_url':'admin.php?c=user&a=changestatus',
+		'delete_url':'admin.php?c=user&a=delete'
+	}
+</script>
+</body>
+</html>

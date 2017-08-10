@@ -1,0 +1,42 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">收藏管理 -></div>
+		</div>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>收藏ID</th>
+						<th>曲谱ID</th>
+						<th>收藏时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="collects" id="collect">
+						<tr>
+							<th>{$collect.collect_id}</th>
+							<th>{$collect.user_id}</th>
+							<th>{$collect.opern_id}</th>
+							<th>{$collect.create_time|date="Y-m-d H:i",###}</th>
+							<th>
+								<img src="/WebPiano/Public/image/icon/delete.png" width="20px" id="delete" attr-id="{$collect.collect_id}" title="删除">
+							</th>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+			<div class="green-black">{$pageRes}</div>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js?v=317"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'delete_url':'admin.php?c=collect&a=delete'
+	}
+</script>
+</body>
+</html>

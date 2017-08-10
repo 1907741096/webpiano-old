@@ -1,0 +1,20 @@
+<include file="Index/header"/>
+<body>
+<include file="Index/top"/>
+	<section class="error">
+		<h1 style="color:red">{$message}</h1>
+		<h3 id="location" >系统将在<span style="color:red">3</span>秒后自动跳转到首页</h3>
+	</section>
+<script type="text/javascript">
+  var url = "index.php";
+  var time = 3;
+  setInterval("refer()",1000);
+  function refer() {
+	if(time==0) {
+	  location.href=url;
+	}
+	$("#location span").html(time);
+	time--;
+  }
+</script>
+</body>

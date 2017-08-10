@@ -1,0 +1,47 @@
+<include file="Index/header"/>
+<body>
+<include file="Index/top"/>
+<div class="news_info_info">
+	<div class="news_info_left">
+		<div class="news-time">{$news.create_time|date='Y-m-d H:i',###}</div>
+		<div class="news-author">
+			<img src="{$news.face}">
+			<div>{$news.author}</div>
+		</div>
+		<div class="news-title">{$news.title}</div>
+		<if condition="$news['thumb']!=''"><img src="{$news.thumb}" height="300"></if>
+		<div class="news-content">{$news.content}</div>
+
+		<div class="news-comment">评论 {$news.comment}</div>
+		<div class="news-comment-content">
+			<volist name="comments" id="comment">
+				<div class="comments-author">
+					<img src="{$comment.face}">
+					<div>{$comment.name}:</div>
+					<div>{$comment.content}</div>
+				</div>
+			</volist>
+		</div>
+
+		<div class="comment_form">
+			<form id="form">
+				<div>发表评论</div>
+				<input type="text" name="content" class="comment">
+				<input type="hidden" name="news_id" value="{$news.news_id}">
+				<input class="news_form_button" type="button" id="submit" value="评论">
+			</form>
+		</div>
+	</div>
+	<include file="News/right"/>
+</div>
+<div class="news_bottom"></div>
+<script type="text/javascript" src="/WebPiano/Public/js/dialog.js"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'save_url':'index.php?c=comment&a=add',
+		'jump_url':'index.php?c=news&a=info&id={$news.news_id}'
+	};
+</script>
+</body>
+</body>

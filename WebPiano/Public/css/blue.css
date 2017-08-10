@@ -1,0 +1,125 @@
+.background{
+	background: url('/WebPiano/Public/image/background2.jpg') no-repeat;
+	background-size:100% 100%;
+}
+header{
+	background: #3399FF;
+}
+.top{
+	background: #3399FF;
+	color: #FFF;
+}
+.piano{
+	background: #3399FF;
+}
+.whitekey{
+	background: #FFF;
+}
+.blackkey{
+	background: #3399FF;
+	border: 1px solid #3399FF;
+	border-top: none;
+}
+.keys{
+	background: #CCFFFF;
+}
+.key2{
+	border:1px solid #3399FF;
+	color: #FFF;
+	background: #3399FF;
+}
+.key3{
+	border:1px solid #AAFFFF;
+	background: #FFF;
+	color: #3300CC;
+}
+.key4{
+	border:1px solid #AAFFFF;
+	background: #FFF;
+	color: #3300CC;
+}
+#style{
+	color: #FFF;
+	background: #3399FF;
+}
+#changestyle li{
+	color: #FFF;
+	background: #3399FF;
+}
+#changestyle li:hover{
+	background: #3366FF;
+}
+.loginback{
+	background: url('/WebPiano/Public/image/loginback4.jpg') no-repeat;
+	background-size:100% 100%;
+	overflow-y: hidden;
+}
+.loginform div{
+	color: #FFF;
+}
+.loginform .username{
+	border:1px solid #999;
+}
+.loginform .password{
+	border:1px solid #999;
+}
+.loginform .submit{
+	border:1px solid #001133;
+	background: #001133;
+}
+.loginform .submit:hover{
+	background: #000033;
+}
+.regform div{
+	color: #FFF;
+}
+.regform .username{
+	border:1px solid #999;
+}
+.regform .password{
+	border:1px solid #999;
+}
+.regform .submit{
+	border:1px solid #001133;
+	background: #001133;
+}
+.regform .submit:hover{
+	background: #000033;
+}
+.news_left{
+	background:rgba(238,255,255,0.8);
+}
+.stick{
+	color: #3366FF;
+}
+.search input{
+	border: 1px solid #3399FF;
+
+}
+.search button{
+	border:1px solid #3399FF;
+	background: #3399FF;
+}
+.news_content_top_title{
+	color: #3366FF;
+}
+.stick_title span{
+	color: #FFF;
+	background: #3366FF;
+}
+.news_bottom{
+	background: #3366FF;
+}
+.news_form_button{
+	border: 1px solid #3366FF;
+	background: #3366FF;
+}
+.info_bottom{
+	background: #3366FF;
+}
+.stick_title{
+	color: #3366FF;
+}
+.stick_content{
+	color: #3366FF;
+}

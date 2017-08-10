@@ -1,0 +1,34 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">添加音乐 -></div>
+		</div>
+		<div  class="addform">
+			<form id="form">
+				<input type="text" name="name" placeholder="name" class="form_text" value="{$musicbyid.name}"><br>
+				<input type="text" name="author" placeholder="author" class="form_text" value="{$musicbyid.author}"><br>
+				<input id="music_upload" type="file" multiple="true" >
+		        <input id="file_upload_image" name="address" type="hidden" multiple="true" value="{$musicbyid.address}"><br>
+				<span>
+					<input  class="form_radio" type="radio" name="status" value="1" <if condition="$musicbyid['status'] eq 1">checked</if>>开启
+					<input  class="form_radio" type="radio" name="status" value="0" <if condition="$musicbyid['status'] eq 0">checked</if>>关闭
+				</span><br>
+				<input type="hidden" name="music_id" value="{$musicbyid.music_id}">
+				<input class="form_button" type="button" id="submit" value="submit">
+			</form>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/party/jquery.uploadify.js"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/music.js"></script>
+<script type="text/javascript">
+	var SCOPE={
+		'url':'admin.php?c=music&a=add',
+		'jump_url':'admin.php?c=music',
+		'ajax_upload_image_url':'admin.php?c=music&a=ajaxuploadmusic',
+		'ajax_upload_swf':'/WebPiano/Public/js/party/uploadify.swf'
+	}
+</script>
+</body>
+</html>

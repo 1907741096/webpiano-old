@@ -1,0 +1,51 @@
+<include file="Index/header"/>
+<body>
+	<include file="Index/top"/>
+	<div class="news">
+		<div class="news_left">
+			<div class="news_top">
+				<div class="stick">置顶帖</div>
+				<volist name="newsstick" id="newstick">
+					<a class="news_stick" href="index.php?c=news&a=info&id={$newstick.news_id}">
+						<div class="stick_title"><span>置顶</span>{$newstick.title|gettitle}</div>
+						<div class="stick_content">{$newstick.content|getstickcontent}</div>
+					</a>
+				</volist>
+			</div>
+			<iframe src="index.php?c=news&a=main" frameborder="0" name="mainFrame" width="100%" height="1718px"></iframe>
+			<div class="news_addform">
+				<div class="news_fbxt"><img src="/WebPiano/Public/image/icon/edit.png" width="20">发表新帖</div>
+				<form id="form">
+					<input type="text" name="title" placeholder="帖子标题" class="form_text" value=""><br>
+					<input id="file_upload"  type="file" multiple="true" >
+					<img style="display:none;" id="upload_org_code_img" src="" width="170" height="100">
+					<input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="">
+					<textarea class="" id="editor" name="content" rows="20" style="width: 100%"></textarea>
+					<input class="news_form_button" type="button" id="submit" value="发表">
+				</form>
+			</div>
+	</div>
+	<include file="News/right"/>
+</div>
+<div class="news_bottom"></div>
+<script src="/WebPiano/Public/js/common.js?v=328"></script>
+<script src="/WebPiano/Public/js/party/jquery.uploadify.js"></script>
+<script src="/WebPiano/Public/js/image.js"></script>
+<script src="/WebPiano/Public/js/kindeditor/kindeditor-all.js"></script>
+<script>
+  // 6.2
+  KindEditor.ready(function(K) {
+  	window.editor = K.create('#editor',{
+  		uploadJson : 'index.php?c=image&a=kindupload',
+      afterBlur : function(){this.sync();}, //
+  });
+  });
+  var SCOPE={
+		'save_url':'index.php?c=news&a=add',
+		'jump_url':'index.php?c=news',
+		'ajax_upload_image_url':'index.php?c=image&a=ajaxuploadimage',
+		'ajax_upload_swf':'/WebPiano/Public/js/party/uploadify.swf'
+	}
+</script>
+</body>
+</html>

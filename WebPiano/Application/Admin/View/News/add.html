@@ -1,0 +1,54 @@
+<include file="Index/header"/>
+<body>
+	<div class="main">
+		<div class="admin_class">
+			<div class="class_name">添加帖子 -></div>
+		</div>
+		<div  class="news_addform">
+			<form id="form">
+				<input type="text" name="title" placeholder="title" class="form_text" value="{$newsbyid.title}"><br>
+				<input type="text" name="user_id" placeholder="userID" class="form_text" value="{$newsbyid.user_id}"><br>
+				<input id="file_upload"  type="file" multiple="true" >
+		        <img <if condition="$newsbyid['thumb'] eq ''">style="display:none;"</if> id="upload_org_code_img" src="{$newsbyid.thumb}" width="150" height="150">
+		        <input id="file_upload_image" name="thumb" type="hidden" multiple="true" value="{$newsbyid.thumb}"><br>
+		        <textarea class="" id="editor" name="content" rows="20">{$newsbyid.content}</textarea>
+				<label>置顶:</label><span>
+					<input  class="news_form_radio" type="radio" name="stick" value="1" <if condition="$newsbyid['stick'] eq 1">checked</if>>是
+					<input  class="news_form_radio" type="radio" name="stick" value="0" <if condition="$newsbyid['stick'] eq 0">checked</if>>否
+				</span><br>
+				<label>加精:</label><span>
+					<input  class="news_form_radio" type="radio" name="fine" value="1" <if condition="$newsbyid['fine'] eq 1">checked</if>>是
+					<input  class="news_form_radio" type="radio" name="fine" value="0" <if condition="$newsbyid['fine'] eq 0">checked</if>>否
+				</span><br>
+				<label>状态:</label><span>
+					<input  class="news_form_radio" type="radio" name="status" value="1" <if condition="$newsbyid['status'] eq 1">checked</if>>开
+					<input  class="news_form_radio" type="radio" name="status" value="0" <if condition="$newsbyid['status'] eq 0">checked</if>>关
+				</span><br>
+				<input type="hidden" name="news_id" value="{$newsbyid.news_id}">
+				<input class="news_form_button" type="button" id="submit" value="submit">
+			</form>
+		</div>
+	</div>
+<script type="text/javascript" src="/WebPiano/Public/js/common.js?v=318"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/party/jquery.uploadify.js"></script>
+<script type="text/javascript" src="/WebPiano/Public/js/image.js"></script>
+<script src="/WebPiano/Public/js/kindeditor/kindeditor-all.js"></script>
+<script>
+  // 6.2
+  KindEditor.ready(function(K) {
+    window.editor = K.create('#editor',{
+      uploadJson : 'admin.php?c=image&a=kindupload',
+      afterBlur : function(){this.sync();}, //
+    });
+  });
+</script>
+<script type="text/javascript">
+	var SCOPE={
+		'url':'admin.php?c=news&a=add',
+		'jump_url':'admin.php?c=news',
+		'ajax_upload_image_url':'admin.php?c=image&a=ajaxuploadimage',
+		'ajax_upload_swf':'/WebPiano/Public/js/party/uploadify.swf'
+	}
+</script>
+</body>
+</html>

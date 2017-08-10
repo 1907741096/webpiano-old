@@ -1,0 +1,119 @@
+.background{
+	background: url('/WebPiano/Public/image/background3.jpg') no-repeat;
+	background-size:100% 100%;
+}
+header{
+	background: #FF6688;
+}
+.top{
+	background: #FF6688;
+	color: #FFF;
+}
+.piano{
+	background:#FF5588;
+}
+.whitekey{
+	background: #FFF;
+}
+.blackkey{
+	background: #FF5588;
+	border: 1px solid #FF5588;
+	border-top: none;
+}
+.keys{
+	background: #FFCCDD;
+}
+.key2{
+	border:1px solid #FF7788;
+	color: #FFF;
+	background: #FF7788;
+}
+.key3{
+	border:1px solid #FFDDFF;
+	background: #FFF;
+	color: #FF3388;
+}
+.key4{
+	border:1px solid #FFDDFF;
+	background: #FFF;
+	color: #FF3388;
+}
+#style{
+	color: #FFF;
+	background: #FF6688;
+}
+#changestyle li{
+	color: #FFF;
+	background: #FF6688;
+}
+#changestyle li:hover{
+	background: #FF4488;
+}
+.loginback{
+	background: url('/WebPiano/Public/image/loginback3.jpg') no-repeat;
+	background-size:100% 100%;
+	overflow-y: hidden;
+}
+.loginform .username{
+	border:none;
+}
+.loginform .password{
+	border:none;
+}
+.loginform .submit{
+	border:1px solid #FF7788;
+	background: #FF7788;
+}
+.loginform .submit:hover{
+	background: #FF5588;
+}
+.regform .username{
+	border:none;
+}
+.regform .password{
+	border:none;
+}
+.regform .submit{
+	border:1px solid #FF7788;
+	background: #FF7788;
+}
+.regform .submit:hover{
+	background: #FF5588;
+}
+.news_left{
+	background:rgba(255,238,255,0.8);
+}
+.stick{
+	color: #FF3388;
+}
+.search input{
+	border: 1px solid #FF6688;
+
+}
+.search button{
+	border:1px solid #FF6688;
+	background: #FF6688;
+}
+.news_content_top_title{
+	color: #FF3388;
+}
+.stick_title span{
+	color: #FFF;
+	background: #FF3388;
+}
+.news_bottom{
+	background: #FF6688;
+}
+.news_form_button{
+	border: 1px solid #FF6688;
+	background: #FF6688;
+}
+.info_bottom{
+	background: #FF6688;
+}
+.stick_title{
+	color: #FF3388;
+}
+.stick_content{
+	color: #FF6688;
+}
